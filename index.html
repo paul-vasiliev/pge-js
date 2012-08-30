@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Javascript</title>
+	<script type="text/javascript" src="js/com/pigsels/PGE.js"></script>
+	<script type="text/javascript" src="js/com/pigsels/modules/display.js"></script>
+	<script type="text/javascript" src="js/com/pigsels/modules/math.js"></script>
+	<script type="text/javascript" src="js/com/pigsels/modules/core.js"></script>
+	<script type="text/javascript" src="js/com/pigsels/modules/events.js"></script>
+	<script type="text/javascript" src="js/com/pigsels/modules/time.js"></script>
+	<script type="text/javascript" src="js/com/pigsels/modules/input.js"></script>
+	<script type="text/javascript" src="js/com/pigsels/modules/game.js"></script>
+</head>
+<body style="margin: 0px; padding: 0px">
+	<div id="game"></div>
+	<script>
+		PGE.setup({
+			basePath: 'assets/',
+			fps: 30,
+			width: 800,
+			height: 600,
+			container: document.getElementById('game')
+		}).preload({
+			images: [
+				'images/sprites_map_claudius.png'
+			]
+		}, function(loaded, total) {
+			//console.log(loaded, total);
+		}, function(total) {
+			PGE.startup().run(PGE.pge.game.CustomGame);
+		});
+		
+	</script>
+</body>
+</html>
